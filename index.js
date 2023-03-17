@@ -67,14 +67,14 @@
 // var a = f1(function(){console.log("passed")});
 // console.log(a())
 
-var person = {
-    name : 'amitosh',
-    age : 25,
-    hobbies : ['football', 'cricket'],
-    speak: function(){
-        console.log('speak like human')
-    }
-};
+// var person = {
+//     name : 'amitosh',
+//     age : 25,
+//     hobbies : ['football', 'cricket'],
+//     speak: function(){
+//         console.log('speak like human')
+//     }
+// };
 
 // console.log(person.hobbies);
 // console.log(person.age);
@@ -101,14 +101,42 @@ var person = {
 
 // var a = new dog();
 
-function Dog(name, breed){
-    this.name = name;
-    this.breed = breed;
-    this.bark = function(){
-        console.log('woof woof');
-    }
-}
-var a = new Dog('toommy', 'mixed');
-var b = new Dog('cat', 'mixed2');
-console.log(a);
+// function Dog(name, breed){
+//     this.name = name;
+//     this.breed = breed;
+//     this.bark = function(){
+//         console.log('woof woof');
+//     }
+// }
+// var a = new Dog('toommy', 'mixed');
+// var b = new Dog('cat', 'mixed2');
+// console.log(a);
+// console.log(b);
+
+//Hoisting
+// a = 20;
+// var a;
+// console.log(a);
+
+// function log(){
+//     var args = Array.prototype.slice.call(arguments);
+//     args.unshift('amitosh');
+//     console.log.apply(console,args);
+
+// }
+// log('hi', "hello");
+
+
+// var a = function(){    //
+//     console.log('hi');
+// }
+// a();
+
+
+// (function(){   //IIFE
+//     console.log('hi');
+// })();
+
+let b = 10;
+let b = 10;
 console.log(b);
