@@ -113,6 +113,9 @@
 // console.log(a);
 // console.log(b);
 
+// Prototype is an object which is avialable in all constructor functions using
+// which inheritance can be achieved in javascript.
+
 //Hoisting
 // a = 20;
 // var a;
@@ -140,3 +143,48 @@
 // let b = 10;
 // let b = 10;
 // console.log(b);
+
+function Dog(name, breed){
+    this.name = name;
+    this.breed = breed;
+    this.talks = function(){
+        console.log('bark like a dog');
+    }
+}
+Dog.prototype.roxy = function(){         
+    console.log('barks like roxy');
+    // With the use of prototype we add another function to the Dog function and can be used with all the objects with Dog.
+}
+Dog.prototype.ceasor = function(){
+    console.log('vigrous barking');
+}
+var d0 = new Dog('tommy', 'mixed');
+console.log(d0.talks());
+
+var d1 = new Dog('roxy', 'pomerian');
+console.log(d1.roxy());
+
+var d2 = new Dog('ceasor', 'german shepard');
+console.log(d2.ceasor());
+
+
+// Proto
+// var a = {
+//     x : 10,
+//     calculate : function(z){
+//         return this.x + this.y + z;
+//     }
+// };
+
+// var b = {
+//     y : 20,
+//     __proto__ : a    //pointing to what all a is having.
+// };
+// //Similarly for c 
+// var c = {
+//     y : 11,
+//     __proto__ : a
+// };
+// console.log(c.calculate(14));
+
+// console.log(b.calculate(9));
