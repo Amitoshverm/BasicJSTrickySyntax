@@ -144,28 +144,28 @@
 // let b = 10;
 // console.log(b);
 
-function Dog(name, breed){
-    this.name = name;
-    this.breed = breed;
-    this.talks = function(){
-        console.log('bark like a dog');
-    }
-}
-Dog.prototype.roxy = function(){         
-    console.log('barks like roxy');
-    // With the use of prototype we add another function to the Dog function and can be used with all the objects with Dog.
-}
-Dog.prototype.ceasor = function(){
-    console.log('vigrous barking');
-}
-var d0 = new Dog('tommy', 'mixed');
-console.log(d0.talks());
+// function Dog(name, breed){
+//     this.name = name;
+//     this.breed = breed;
+//     this.talks = function(){
+//         console.log('bark like a dog');
+//     }
+// }
+// Dog.prototype.roxy = function(){         
+//     console.log('barks like roxy');
+//     // With the use of prototype we add another function to the Dog function and can be used with all the objects with Dog.
+// }
+// Dog.prototype.ceasor = function(){
+//     console.log('vigrous barking');
+// }
+// var d0 = new Dog('tommy', 'mixed');
+// console.log(d0.talks());
 
-var d1 = new Dog('roxy', 'pomerian');
-console.log(d1.roxy());
+// var d1 = new Dog('roxy', 'pomerian');
+// console.log(d1.roxy());
 
-var d2 = new Dog('ceasor', 'german shepard');
-console.log(d2.ceasor());
+// var d2 = new Dog('ceasor', 'german shepard');
+// console.log(d2.ceasor());
 
 
 // Proto
@@ -188,3 +188,42 @@ console.log(d2.ceasor());
 // console.log(c.calculate(14));
 
 // console.log(b.calculate(9));
+
+
+// //hoisting
+// var a = 111;
+// function abc(){
+//     // var a;
+//     console.log(a);
+//     var a = 10; //a = 10
+// }
+// abc();
+/** Important- Function declarations are hoisted and expressions are not */
+
+
+var pokemon = {
+    firstName : 'Pika',
+    lastName : 'Chu',
+
+    getPokeName : function(){
+        var fullName = this.firstName + ' ' + this.lastName;
+        return fullName;
+    }
+}
+var pokemonName = function(snack, hobby) {
+    console.log(this.getPokeName() + ' loves '+ snack +' and '+ hobby);
+}
+
+var newPokemon = pokemonName.bind(pokemon);
+newPokemon('meatballs', 'sleeping');
+
+// pokemonName.call(pokemon,'meatballs', 'sleeping');
+// pokemonName.apply(pokemon, ['chicken', 'thunderbolt']);
+
+// .call(newReferrence, parameter1, parameter2, ...);
+//.apply(newReferrence, [paremeter1, parameter2, ...]); //array of paremeters
+// So what is the difference between call and apply?
+
+// var a = [1, 2, 4, 6, 7];
+// console.log(Math.max.apply(this, a)); 
+//this wont work on call 
