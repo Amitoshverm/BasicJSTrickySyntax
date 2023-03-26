@@ -201,23 +201,26 @@
 /** Important- Function declarations are hoisted and expressions are not */
 
 
-var pokemon = {
-    firstName : 'Pika',
-    lastName : 'Chu',
+// var pokemon = {
+//     firstName : 'Pika',
+//     lastName : 'Chu',
 
-    getPokeName : function(){
-        var fullName = this.firstName + ' ' + this.lastName;
-        return fullName;
-    }
-}
-var pokemonName = function(snack, hobby) {
-    console.log(this.getPokeName() + ' loves '+ snack +' and '+ hobby);
-}
+//     getPokeName : function(){
+//         var fullName = this.firstName + ' ' + this.lastName;
+//         return fullName;
+//     }
+// }
+// var pokemonName = function(snack, hobby) {
+//     console.log(this.getPokeName() + ' loves '+ snack +' and '+ hobby);
+// }
 
-var newPokemon = pokemonName.bind(pokemon);
-newPokemon('meatballs', 'sleeping');
+// //Bind
+// var newPokemon = pokemonName.bind(pokemon);
+// newPokemon('meatballs', 'sleeping');
 
+//call
 // pokemonName.call(pokemon,'meatballs', 'sleeping');
+//apply
 // pokemonName.apply(pokemon, ['chicken', 'thunderbolt']);
 
 // .call(newReferrence, parameter1, parameter2, ...);
@@ -227,3 +230,16 @@ newPokemon('meatballs', 'sleeping');
 // var a = [1, 2, 4, 6, 7];
 // console.log(Math.max.apply(this, a)); 
 //this wont work on call 
+var Monica = {
+    name: 'Monica Geller',
+    total: 500,
+    deductAmout: function(amount){
+        this.total -= amount;
+        return this.name + ' remaining balance is ' + this.total; 
+    }
+}
+
+var Rachel = {name: 'Rachel Green', total: 1500,__proto__: Monica};
+console.log(Rachel.deductAmout(200))
+
+// console.log(Monica.deductAmout.call(Rachel, 100));
