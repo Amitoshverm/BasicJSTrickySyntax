@@ -230,16 +230,19 @@
 // var a = [1, 2, 4, 6, 7];
 // console.log(Math.max.apply(this, a)); 
 //this wont work on call 
-var Monica = {
-    name: 'Monica Geller',
-    total: 500,
-    deductAmout: function(amount){
-        this.total -= amount;
-        return this.name + ' remaining balance is ' + this.total; 
-    }
-}
+// var Monica = {
+//     name: 'Monica Geller',
+//     total: 500,
+//     deductAmout: function(amount){
+//         this.total -= amount;
+//         return this.name + ' remaining balance is ' + this.total; 
+//     }
+// }
 
-var Rachel = {name: 'Rachel Green', total: 1500,__proto__: Monica};
-console.log(Rachel.deductAmout(200))
+// //using __proto__
+// var Rachel = {name: 'Rachel Green', total: 1500,__proto__: Monica};
+// console.log(Rachel.deductAmout(200))
 
+// //using call
 // console.log(Monica.deductAmout.call(Rachel, 100));
+// more conceps
